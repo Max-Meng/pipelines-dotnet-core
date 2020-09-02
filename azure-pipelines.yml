@@ -1,4 +1,14 @@
 # ASP.NET Core
+- task: SqlAzureDacpacDeployment@1
+  inputs:
+    azureSubscription: 'fame-devops-sql-conn'
+    AuthenticationType: 'aadAuthenticationIntegrated'
+    ServerName: 'fame-sqlsrv-ea-01.database.windows.net'
+    DatabaseName: 'fame-sqldb-ea-adv'
+    deployType: 'DacpacTask'
+    DeploymentAction: 'Import'
+    BacpacFile: 'x.dacpac'
+    IpDetectionMethod: 'AutoDetect'
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
